@@ -1,0 +1,220 @@
+/* ---------- NAVBAR BASE ---------- */
+
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(8px);
+  background: transparent;
+
+  transition: all 0.3s ease;
+
+  font-family: "Inter", sans-serif;
+}
+/* when scrolled */
+
+.navbar-scrolled {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #eee;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+
+  padding: 18px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------- LOGO ---------- */
+
+.logo{
+  font-size:20px;
+  font-weight:600;
+}
+
+.nav-item span:first-child{
+  font-size:15px;
+  font-weight:500;
+}
+
+/* ---------- RIGHT SIDE ---------- */
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+/* ---------- LINKS ---------- */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+/* ---------- NAV ITEM ---------- */
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+}
+
+/* text */
+
+.nav-item span:first-child{
+  color:#333;
+  font-size:15px;
+  font-weight:500;
+  transition:0.25s;
+}
+
+/* hover */
+
+.nav-item:hover span:first-child{
+  color:black;
+}
+
+/* ---------- UNDERLINE ---------- */
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: black;
+  transition: width 0.3s ease;
+}
+
+/* hover underline */
+
+.nav-item:hover .underline{
+  width:100%;
+}
+
+/* ---------- ACTIVE LINK ---------- */
+
+.nav-item.nav-active span:first-child{
+  color:#e50914;
+  font-weight:600;
+}
+
+.nav-item.nav-active .underline{
+  width:100%;
+  background:#e50914;
+}
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #222;
+  transition: all 0.3s ease;
+}
+
+/* animation */
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* =====================================================
+   MOBILE NAVBAR
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(14px);
+
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    padding: 30px 0;
+
+    transform: translateY(-120%);
+    opacity: 0;
+
+    transition: all 0.35s ease;
+  }
+
+  .nav-links.nav-open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-item {
+    font-size: 18px;
+  }
+}
+
+/* ---------- MODE SWITCH ---------- */
+
+.mode-toggle {
+  margin-left: 20px;
+  padding: 8px 16px;
+
+  border-radius: 20px;
+  border: 1px solid #e50914;
+
+  background: transparent;
+  color: #e50914;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+/* ---------- 3D NAVBAR ---------- */
+
+.navbar-3d{
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+}

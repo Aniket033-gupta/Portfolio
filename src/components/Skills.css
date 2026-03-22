@@ -1,0 +1,118 @@
+/* ---------- SECTION ---------- */
+
+.skills {
+  padding: 100px 20px;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ---------- TITLE ---------- */
+
+.skills-label {
+  color: #e50914;
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+.skills-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.skills-title span {
+  color: #e50914;
+}
+
+/* ---------- GRID ---------- */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ---------- CARD ---------- */
+
+.skill-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* ---------- ICON ---------- */
+
+.skill-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+
+  transition: all 0.3s ease;
+}
+
+/* ---------- TEXT ---------- */
+
+.skill-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.skill-card p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* ---------- HOVER EFFECT ---------- */
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: #e50914;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* icon color appears on hover */
+
+.skill-card:hover .skill-icon {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- LAST CARD ---------- */
+
+.skill-card:last-child {
+  border-color: #ffe5e5;
+}
+.skill-card:hover {
+  background: #fff;
+  border-color: #e50914;
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(229,9,20,0.1);
+}

@@ -1,0 +1,269 @@
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+.about-dev {
+  width: 100%;
+  padding: 110px 20px;
+  /* background: #fafafa; */
+  color: #111;
+}
+
+/* CONTAINER */
+
+.about-dev-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+/* LEFT */
+
+.about-dev-left {
+  flex: 1;
+}
+
+.code-label {
+  color: #e50914;
+  font-family: monospace;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.about-dev-title {
+  font-size: 46px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.about-dev-title span {
+  color: #e50914;
+}
+
+.about-dev-text {
+  color: #555;
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: 18px;
+}
+
+/* RIGHT GRID */
+
+.about-dev-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* STAT CARDS */
+
+.about-stat-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 30px;
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.3s ease;
+}
+
+.about-stat-card:hover {
+  transform: translateY(-6px);
+  border-color: #e50914;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.code-icon {
+  font-size: 26px;
+  color: #e50914;
+}
+
+.about-stat-card h3 {
+  font-size: 34px;
+  margin: 10px 0 6px;
+}
+
+.about-stat-card p {
+  color: #666;
+  font-size: 14px;
+}
+
+.creative-card {
+  border-color: #ffe5e5;
+}
+
+/* =====================================================
+   EDUCATION TIMELINE
+===================================================== */
+
+.education-section {
+  max-width: 1200px;
+  margin: 120px auto 0;
+  border-top: 1px solid #eee;
+  padding-top: 60px;
+}
+
+.education-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 60px;
+}
+
+/* TIMELINE WRAPPER */
+
+.timeline {
+  position: relative;
+}
+
+/* CENTER LINE */
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: #e50914;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ITEM */
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+}
+
+/* LEFT RIGHT */
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+/* DOT */
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #e50914;
+  border-radius: 50%;
+  top: 35px;
+  z-index: 2;
+  box-shadow: 0 0 12px rgba(229,9,20,0.6);
+}
+
+.timeline-item.left::after {
+  right: -7px;
+}
+
+.timeline-item.right::after {
+  left: -7px;
+}
+
+/* CARD */
+
+.timeline-content {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 24px 28px;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+  border-color: #e50914;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.timeline-content h4 {
+  margin: 6px 0;
+  font-size: 20px;
+}
+
+.timeline-content p {
+  color: #666;
+}
+
+.timeline-content small {
+  color: #999;
+}
+
+/* TAG */
+
+.edu-tag {
+  display: inline-block;
+  font-size: 12px;
+  background: rgba(229,9,20,0.1);
+  color: #e50914;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+  .about-dev-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 20px;
+    text-align: left;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item.left::after,
+  .timeline-item.right::after {
+    left: 13px;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-dev-title {
+    font-size: 36px;
+  }
+
+  .about-dev-right {
+    grid-template-columns: 1fr;
+  }
+
+  .education-title {
+    font-size: 26px;
+  }
+}
