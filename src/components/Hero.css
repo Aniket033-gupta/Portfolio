@@ -32,7 +32,7 @@
 
 .hero-intro {
   font-size: 20px;
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 10px;
 }
 
@@ -40,20 +40,21 @@
   font-size: 72px;
   font-weight: 800;
   line-height: 1.05;
-  color: #111;
+  color: var(--text-primary);
 }
 
 /* gradient text like reference */
 .gradient-text {
-  background: linear-gradient(90deg, #ff2e2e, #b30000);
+  background: var(--neon-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-desc {
   margin-top: 20px;
   font-size: 18px;
-  color: #666;
+  color: var(--text-secondary);
   max-width: 500px;
   line-height: 1.6;
 }
@@ -67,37 +68,41 @@
 }
 
 .btn-primary {
-  background: #111;
+  background: var(--neon-gradient);
   color: white;
   border: none;
   text-decoration: none;
   padding: 14px 22px;
   border-radius: 10px;
   font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 .btn-secondary {
   background: transparent;
-  border: 1.5px solid #d1d1d1;
+  border: 1.5px solid var(--neon-blue);
   text-decoration: none;
-  color: #111;
+  color: var(--neon-blue);
   padding: 14px 24px;
   border-radius: 10px;
   font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 /* hover effect */
 .btn-secondary:hover {
-  border-color: #e50914;
-  color: #e50914;
+  background: rgba(59, 130, 246, 0.1);
+  color: white;
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.3);
   transform: translateY(-2px);
 }
 
@@ -115,19 +120,28 @@
   border-radius: 50%;
   padding: 12px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(255, 0, 0, 0.35),
-    rgba(180, 0, 0, 0.15)
-  );
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
 
   box-shadow:
-    0 20px 40px rgba(0,0,0,0.1),
-    0 0 40px rgba(255,0,0,0.25);
+    0 20px 40px rgba(0,0,0,0.5),
+    0 0 40px rgba(59, 130, 246, 0.3),
+    0 0 80px rgba(147, 51, 234, 0.2);
 
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: pulse-glow 3s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(147, 51, 234, 0.2), inset 0 0 10px rgba(59, 130, 246, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.5), 0 0 100px rgba(147, 51, 234, 0.4), inset 0 0 20px rgba(147, 51, 234, 0.2);
+  }
 }
 
 .image-circle img {
@@ -135,6 +149,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  background-color: transparent;
 }
 /* ================= RESPONSIVE ================= */
 

@@ -13,8 +13,10 @@
 /* ---------- TITLE ---------- */
 
 .achievements-label {
-  color: #e50914;
+  color: var(--neon-blue);
   font-family: monospace;
+  font-size: 16px;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -22,11 +24,14 @@
   font-size: 42px;
   font-weight: 800;
   margin-bottom: 50px;
-  color: #111;
+  color: var(--text-primary);
 }
 
 .achievements-title span {
-  color: #e50914;
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ---------- CAROUSEL ---------- */
@@ -51,12 +56,12 @@
 
 .carousel::before {
   left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
+  background: linear-gradient(to right, var(--bg-dark), transparent);
 }
 
 .carousel::after {
   right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
+  background: linear-gradient(to left, var(--bg-dark), transparent);
 }
 
 /* ---------- TRACK ---------- */
@@ -82,8 +87,9 @@
   border-radius: 14px;
   overflow: hidden;
 
-  background: #fafafa;
-  border: 1px solid #eee;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
 
   transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
 }
@@ -99,8 +105,9 @@
 
 .cert-card:hover {
   transform: translateY(-8px) scale(1.05);
-  border-color: #e50914;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  background: var(--glass-hover-bg);
+  border-color: var(--neon-purple);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 20px rgba(147, 51, 234, 0.3);
 }
 
 /* ---------- CERTIFICATE NAME OVERLAY ---------- */
@@ -114,11 +121,11 @@
   padding: 12px;
 
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 
-  color: #e50914;
+  color: var(--neon-blue);
 
-    background: rgba(255,255,255,0.85);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
 
   opacity: 0;

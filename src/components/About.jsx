@@ -1,4 +1,5 @@
 import "./About.css";
+import resume from "../assets/AniketKumarGupta.pdf";
 
 export default function About() {
   return (
@@ -11,7 +12,6 @@ export default function About() {
         <div className="about-dev-left">
 
           <p className="code-label">// About Me</p>
-
           <h2 className="about-dev-title">
             Hi, I'm <span>Aniket Gupta</span>
           </h2>
@@ -23,15 +23,17 @@ export default function About() {
           </p>
 
           <p className="about-dev-text">
-            Alongside development, I work as a 3D artist and visual storyteller,
-            creating cinematic renders and motion visuals using Blender and
-            modern creative tools.
+            Alongside development, I solve coding problems and develop projects in Java/JS, exploring areas like AI, networking, and system design.
           </p>
 
           <p className="about-dev-text">
             My goal is to merge technology and creativity into meaningful
             user experiences.
           </p>
+          
+          <a href={resume} download className="about-download-btn">
+            Download Resume
+          </a>
 
         </div>
 
@@ -45,13 +47,13 @@ export default function About() {
           </div>
 
           <div className="about-stat-card">
-            <h3>10+</h3>
+            <h3>3+</h3>
             <p>Projects Built</p>
           </div>
 
           <div className="about-stat-card">
             <h3>Full Stack</h3>
-            <p>React • Node • Spring Boot</p>
+            <p>React • Node • Express</p>
           </div>
 
         </div>
@@ -68,7 +70,7 @@ export default function About() {
           {/* BTECH */}
           <div className="timeline-item left">
             <div className="timeline-content">
-              <span className="edu-tag">Ongoing</span>
+              <span className="edu-tag">Ongoing • 7.28 CGPA</span>
               <h4>B.Tech — Computer Science & Engineering</h4>
               <p>Lovely Professional University, Punjab</p>
               <small>2024 — Present</small>
@@ -78,19 +80,19 @@ export default function About() {
           {/* DIPLOMA */}
           <div className="timeline-item right">
             <div className="timeline-content">
-              <span className="edu-tag">Diploma • 85.6%</span>
+              <span className="edu-tag">Diploma • 77.7%</span>
               <h4>Diploma in Engineering</h4>
-              <p>Lovely Professional University</p>
-              <small>2021 — 2024</small>
+              <p>M.P Polytechnic, Gorakhpur</p>
+              <small>2020 — 2023</small>
             </div>
           </div>
 
           {/* 10TH */}
           <div className="timeline-item left">
             <div className="timeline-content">
-              <span className="edu-tag">76%</span>
+              <span className="edu-tag">85%</span>
               <h4>Matriculation (10th Standard)</h4>
-              <p>Foundation School, Buxar</p>
+              <p>PGSS School, Gorakhpur</p>
               <small>2018 — 2020</small>
             </div>
           </div>

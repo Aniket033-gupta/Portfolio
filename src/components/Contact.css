@@ -2,8 +2,7 @@
 
 .contact {
   padding: 110px 20px;
-  /* background: #fafafa; */
-  color: #111;
+  color: var(--text-primary);
 }
 
 .contact-container {
@@ -19,10 +18,11 @@
 /* ---------- LEFT SIDE ---------- */
 
 .contact-label {
-  color: #e50914;
+  color: var(--neon-blue);
   font-family: monospace;
   margin-bottom: 12px;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .contact-info h2 {
@@ -32,7 +32,7 @@
 }
 
 .contact-desc {
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 28px;
   max-width: 420px;
@@ -41,8 +41,9 @@
 /* email card */
 
 .contact-card {
-  background: #ffffff;
-  border: 1px solid #eee;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   padding: 20px 24px;
   border-radius: 14px;
 
@@ -55,8 +56,9 @@
 
 .contact-card:hover {
   transform: translateY(-4px);
-  border-color: #e50914;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  background: var(--glass-hover-bg);
+  border-color: var(--neon-blue);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.5), 0 0 15px rgba(59, 130, 246, 0.2);
 }
 
 .contact-card span {
@@ -66,10 +68,11 @@
 /* ---------- FORM ---------- */
 
 .contact-form {
-  background: #ffffff;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
   padding: 40px;
   border-radius: 18px;
-  border: 1px solid #eee;
+  border: 1px solid var(--glass-border);
 
   display: flex;
   flex-direction: column;
@@ -79,14 +82,15 @@
 }
 
 .contact-form:hover {
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* labels */
 
 .contact-form label {
   font-size: 14px;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
@@ -94,11 +98,11 @@
 
 .contact-form input,
 .contact-form textarea {
-  /* background: #fafafa; */
-  border: 1px solid #ddd;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--glass-border);
   padding: 14px;
   border-radius: 10px;
-  color: #111;
+  color: var(--text-primary);
   outline: none;
   font-size: 14px;
   transition: all 0.25s ease;
@@ -113,16 +117,16 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #e50914;
-  background: #fff;
-  box-shadow: 0 0 0 2px rgba(229,9,20,0.08);
+  border-color: var(--neon-purple);
+  background: var(--glass-hover-bg);
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.2), 0 0 10px rgba(147, 51, 234, 0.1);
 }
 
 /* ---------- BUTTON ---------- */
 
 .contact-form button {
   margin-top: 12px;
-  background: #111;
+  background: var(--neon-gradient);
   color: white;
   border: none;
   padding: 14px;
@@ -133,9 +137,8 @@
 }
 
 .contact-form button:hover {
-  background: #e50914;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(229,9,20,0.25);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
 }
 
 /* ---------- RESPONSIVE ---------- */

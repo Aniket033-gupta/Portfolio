@@ -14,7 +14,7 @@
 
 .footer-copy {
   font-size: 15px;
-  color: #555;
+  color: var(--text-secondary);
   margin-bottom: 25px;
 }
 
@@ -37,7 +37,7 @@
   width: 40px;
   height: 40px;
 
-  color: #222;
+  color: var(--text-primary);
   transition: all 0.3s ease;
 }
 
@@ -45,7 +45,8 @@
 
 .footer-links a:hover {
   transform: translateY(-4px);
-  color: #000;
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
 /* ---------- TABLET ---------- */

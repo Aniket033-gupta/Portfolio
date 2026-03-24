@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
@@ -7,8 +8,17 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   /* ---------- navbar background on scroll ---------- */
   useEffect(() => {
@@ -77,13 +87,31 @@ export default function Navbar() {
           {/* NAV LINKS */}
           <ul className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
 
-            <NavItem title="Home" id="home" active={active} onClick={scrollToSection}/>
-            <NavItem title="About" id="about" active={active} onClick={scrollToSection}/>
-            <NavItem title="Skills" id="skills" active={active} onClick={scrollToSection}/>
-            <NavItem title="Projects" id="projects" active={active} onClick={scrollToSection}/>
-            <NavItem title="Contact" id="contact" active={active} onClick={scrollToSection}/>
+            <NavItem title="Home" id="home" active={active} onClick={scrollToSection} />
+            <NavItem title="About" id="about" active={active} onClick={scrollToSection} />
+            <NavItem title="Skills" id="skills" active={active} onClick={scrollToSection} />
+            <NavItem title="Projects" id="projects" active={active} onClick={scrollToSection} />
+            <NavItem title="Contact" id="contact" active={active} onClick={scrollToSection} />
 
           </ul>
+
+          {/* THEME TOGGLE */}
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              marginLeft: "15px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "inherit"
+            }}
+          >
+            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
 
           {/* HAMBURGER */}
           <div

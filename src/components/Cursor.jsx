@@ -1,0 +1,48 @@
+import { useEffect, useState } from 'react';
+import './Cursor.css';
+
+export default function Cursor() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    const updatePosition = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    const handleMouseOver = (e) => {
+      if (
+        e.target.tagName.toLowerCase() === 'a' ||
+        e.target.tagName.toLowerCase() === 'button' ||
+        e.target.closest('a') ||
+        e.target.closest('button') ||
+        e.target.classList.contains('cursor-pointer')
+      ) {
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
+      }
+    };
+
+    window.addEventListener('mousemove', updatePosition);
+    window.addEventListener('mouseover', handleMouseOver);
+
+    return () => {
+      window.removeEventListener('mousemove', updatePosition);
+      window.removeEventListener('mouseover', handleMouseOver);
+    };
+  }, []);
+
+  return (
+    <>
+      <div 
+        className={`cursor-dot ${isHovering ? 'hover' : ''}`} 
+        style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      ></div>
+      <div 
+        className={`cursor-outline ${isHovering ? 'hover' : ''}`} 
+        style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      ></div>
+    </>
+  );
+}
