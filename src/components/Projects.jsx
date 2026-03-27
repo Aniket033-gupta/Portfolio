@@ -22,6 +22,15 @@ const projects = [
       "https://github.com/Aniket033-gupta/TIC-TAC-TOE-Game-Application-Java-Swing-",
     live: "",
   },
+  {
+    title: "Car Rental Platform",
+    description:
+      "A premium car rental platform with real-time availability, featuring a clean dashboard for managing bookings, browsing vehicle categories, and secure user authentication.",
+    tech: "React • Node.js • Express • MongoDB",
+    image: "/projects/car-rental.png",
+    github: "https://github.com/Aniket033-gupta/Car-Rental-Platform-With-Real-Time-Availability",
+    live: "",
+  },
 ];
 
 export default function Projects() {
@@ -32,7 +41,7 @@ export default function Projects() {
         <p className="projects-label">// Featured Work</p>
 
         <h2 className="projects-title">
-          My <span>Projects</span>
+          <span>Projects</span>
         </h2>
 
         <div className="projects-grid">

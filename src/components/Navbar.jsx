@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import resume from "../assets/AniketKumarGupta.pdf";
 
 export default function Navbar() {
 
@@ -91,6 +92,7 @@ export default function Navbar() {
             <NavItem title="About" id="about" active={active} onClick={scrollToSection} />
             <NavItem title="Skills" id="skills" active={active} onClick={scrollToSection} />
             <NavItem title="Projects" id="projects" active={active} onClick={scrollToSection} />
+            <NavItem title="Training" id="training" active={active} onClick={scrollToSection} />
             <NavItem title="Contact" id="contact" active={active} onClick={scrollToSection} />
 
           </ul>
@@ -112,6 +114,16 @@ export default function Navbar() {
           >
             {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
           </button>
+
+          {/* RESUME BUTTON */}
+          <a
+            href={resume}
+            target="_blank"
+            rel="noreferrer"
+            className="resume-btn"
+          >
+            Resume
+          </a>
 
           {/* HAMBURGER */}
           <div

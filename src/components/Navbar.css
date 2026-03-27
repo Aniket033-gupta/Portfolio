@@ -201,27 +201,28 @@
   }
 }
 
-/* ---------- MODE SWITCH ---------- */
+/* ---------- RESUME BUTTON ---------- */
 
-.mode-toggle {
-  margin-left: 20px;
-  padding: 8px 16px;
-
+.resume-btn {
+  background: var(--neon-blue);
+  color: white;
+  padding: 8px 18px;
   border-radius: 20px;
-  border: 1px solid #e50914;
-
-  background: transparent;
-  color: #e50914;
-
+  text-decoration: none;
+  font-size: 14px;
   font-weight: 600;
-  cursor: pointer;
-
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
-/* ---------- 3D NAVBAR ---------- */
+.resume-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
 
-.navbar-3d{
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
+@media (max-width: 768px) {
+  .resume-btn {
+    display: none; /* Hide on mobile navbar list instead */
+  }
 }

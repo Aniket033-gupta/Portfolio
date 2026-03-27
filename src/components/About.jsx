@@ -80,7 +80,7 @@ export default function About() {
           {/* DIPLOMA */}
           <div className="timeline-item right">
             <div className="timeline-content">
-              <span className="edu-tag">Diploma • 77.7%</span>
+              <span className="edu-tag">Diploma • 73.7%</span>
               <h4>Diploma in Engineering</h4>
               <p>M.P Polytechnic, Gorakhpur</p>
               <small>2020 — 2023</small>
